@@ -1,0 +1,220 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --bg: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --top-nav: hsl(226, 25%, 17%);
+  --buttons: hsl(225, 23%, 24%);
+  --button-red: hsl(3, 71%, 56%);
+  --text-color: hsl(200, 60%, 99%);
+  --description: hsl(0, 0%, 78%);
+  --card-color: hsl(226, 25%, 17%);
+  --toggle-btn-unchecked: hsl(226, 11%, 37%);
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  min-height: 100vh;
+  background: var(--bg);
+  font-family: 'Noto Sans', sans-serif;
+  margin: 1.5rem 8rem 1rem 8rem;
+}
+
+/* Top Nav bar */
+#top-nav {
+  background-color: var(--top-nav);
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding: 0.5rem;
+  border-radius: 10px;
+  margin-top: 0;
+}
+
+#theme-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--buttons);
+  border: none;
+  border-radius: 8px;
+  padding: 0.6rem;
+}
+
+main {
+  flex: 1;
+}
+
+/* Heading and filter buttons */
+.heading {
+  font-size: 1.3rem;
+  color: var(--text-color);
+}
+
+.heading-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+}
+
+#filter {
+  display: flex;
+  justify-content: end;
+  gap: 0.5rem;
+}
+
+.filter-btn {
+  border-radius: 3.5rem;
+  border: none;
+  padding: 10px 17px;
+  color: var(--text-color);
+  background-color: var(--buttons);
+}
+
+.filter-btn.filter-btn-active {
+  background-color: var(--button-red);
+}
+
+/* cards */
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  gap: 0.5rem;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 15px;
+  height: 10rem;
+  color: var(--text-color);
+  background-color: var(--card-color);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 15px;
+}
+
+/* Card content */
+.details-container {
+  display: flex;
+  gap: 13px;
+}
+
+.details-container img {
+  width: 45px;
+  height: 45px;
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.extension-name {
+  font-size: 1rem;
+}
+
+.desc {
+  font-size: 12px;
+  color: var(--description);
+}
+
+.btn-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Remove button */
+.remove-btn {
+  background-color: var(--buttons);
+  color: var(--text-color);
+  padding: 10px 17px;
+  border-radius: 3.5rem;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.remove-btn:hover {
+  background-color: var(--button-red);
+}
+
+/* Toggle */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 35px;
+  height: 20px;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--toggle-btn-unchecked);
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: '';
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+input:checked + .slider {
+  background-color: var(--button-red);
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px var(--button-red);
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(18px);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  margin: 0.5rem;
+}
