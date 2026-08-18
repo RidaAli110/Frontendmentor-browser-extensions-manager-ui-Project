@@ -155,7 +155,7 @@ main {
 }
 
 /* Tablet responsiveness */
-@media (max-width: 1336px) {
+@media (max-width: 800px) {
   .card-list {
     grid-template-columns: 1fr 1fr;
   }
