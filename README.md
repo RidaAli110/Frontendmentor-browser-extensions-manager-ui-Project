@@ -12,4 +12,5 @@ This project took me 6 days to do approximately 3/4 hours a day.
 * I learned how async await really works and when i did it myself for the first time I understood it really well
 * Also I learned how to add dark mode and light mode functionality
 
-## Live site URL: browser-extension-manager-ui-project.netlify.app
+## Live site URL:
+https://browser-extension-manager-ui-project.netlify.app/
