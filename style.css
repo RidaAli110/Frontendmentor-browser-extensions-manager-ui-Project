@@ -302,3 +302,7 @@ footer {
   margin: 0.5rem;
   color: var(--footer);
 }
+
+footer a {
+  color: rgb(16, 128, 233);
+}
