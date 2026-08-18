@@ -3,16 +3,43 @@
   margin: 0;
   box-sizing: border-box;
 }
-
+/*  Dark mode style */
 :root {
   --bg: linear-gradient(180deg, #040918 0%, #091540 100%);
   --top-nav: hsl(226, 25%, 17%);
+  --nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   --buttons: hsl(225, 23%, 24%);
   --button-red: hsl(3, 71%, 56%);
+  --btn-active-text-color: hsl(227, 75%, 14%);
+  --btn-focus: hsl(3, 71%, 56%);
   --text-color: hsl(200, 60%, 99%);
   --description: hsl(0, 0%, 78%);
   --card-color: hsl(226, 25%, 17%);
+  --card-border: 1px solid rgba(255, 255, 255, 0.2);
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
   --toggle-btn-unchecked: hsl(226, 11%, 37%);
+  --remove-border: rgba(255, 255, 255, 0.2);
+  --footer: white;
+}
+
+/* Light mode style */
+.light-mode {
+  --bg: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --top-nav: hsl(200, 60%, 99%);
+  --nav-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --buttons: hsl(200, 60%, 99%);
+  --button-red: hsl(3, 77%, 44%);
+  --btn-active-text-color: hsl(200, 60%, 99%);
+  --btn-focus: hsl(3, 71%, 56%);
+  --text-color: hsl(227, 75%, 14%);
+  --description: hsl(226, 11%, 37%);
+  --card-color: hsl(200, 60%, 99%);
+  --card-border: none;
+  --card-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  --toggle-btn-unchecked: hsl(0, 0%, 78%);
+  --remove-border: hsl(0, 0%, 78%);
+  --theme-icon: hsl(0, 0%, 93%);
+  --footer: black;
 }
 
 body {
@@ -20,30 +47,39 @@ body {
   justify-content: center;
   flex-direction: column;
   min-height: 100vh;
+  margin: 1.5rem 8rem 1rem 8rem;
   background: var(--bg);
   font-family: 'Noto Sans', sans-serif;
-  margin: 1.5rem 8rem 1rem 8rem;
 }
 
 /* Top Nav bar */
 #top-nav {
-  background-color: var(--top-nav);
   display: flex;
   justify-content: space-between;
   width: 100%;
   padding: 0.5rem;
-  border-radius: 10px;
   margin-top: 0;
+  border-radius: 10px;
+  background-color: var(--top-nav);
+  box-shadow: var(--nav-shadow);
 }
 
 #theme-btn {
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: var(--buttons);
   border: none;
   border-radius: 8px;
   padding: 0.6rem;
+  background-color: var(--buttons);
+}
+
+.light-mode #theme-btn {
+  background-color: var(--theme-icon);
+}
+
+#theme-btn:focus-visible {
+  outline: 1px solid var(--btn-focus);
 }
 
 main {
@@ -80,6 +116,33 @@ main {
 
 .filter-btn.filter-btn-active {
   background-color: var(--button-red);
+  color: var(--btn-active-text-color);
+}
+
+.filter-btn:hover {
+  outline: 1px solid var(--btn-focus);
+}
+
+.filter-btn.filter-btn-active:hover {
+  outline: 1px solid var(--btn-active-text-color);
+}
+
+.filter-btn:focus-visible {
+  outline: 1px solid var(--btn-focus);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 750px) {
+  .heading-container {
+    align-items: center;
+    flex-direction: column;
+  }
+  #filter {
+    margin-top: 1rem;
+  }
+  body {
+    margin: 1rem 2rem;
+  }
 }
 
 /* cards */
@@ -91,6 +154,20 @@ main {
   list-style: none;
 }
 
+/* Tablet responsiveness */
+@media (max-width: 1336px) {
+  .card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 750px) {
+  .card-list {
+    grid-template-columns: 1fr;
+  }
+}
+
 .card {
   display: flex;
   flex-direction: column;
@@ -99,8 +176,9 @@ main {
   height: 10rem;
   color: var(--text-color);
   background-color: var(--card-color);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--card-border);
   border-radius: 15px;
+  box-shadow: var(--card-shadow);
 }
 
 /* Card content */
@@ -141,14 +219,19 @@ main {
   color: var(--text-color);
   padding: 10px 17px;
   border-radius: 3.5rem;
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid var(--remove-border);
 }
 
 .remove-btn:hover {
   background-color: var(--button-red);
+  color: var(--btn-active-text-color);
 }
 
-/* Toggle */
+.remove-btn:focus-visible {
+  outline: 1px solid var(--btn-focus);
+}
+
+/* Toggle - Got this from W3 schools */
 /* The switch - the box around the slider */
 .switch {
   position: relative;
@@ -217,4 +300,5 @@ footer {
   justify-content: center;
   align-items: flex-end;
   margin: 0.5rem;
+  color: var(--footer);
 }

@@ -3,7 +3,6 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <!-- displays site properly based on user's device -->
 
     <link
       rel="icon"
@@ -19,21 +18,9 @@
       href="https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
-
     <title>Frontend Mentor | Browser extensions manager UI</title>
-
-    <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-    <style>
-      .attribution {
-        color: white;
-        font-size: 0.6875rem;
-        text-align: center;
-      }
-      .attribution a {
-        color: hsl(228, 73%, 66%);
-      }
-    </style>
   </head>
+
   <body>
     <!-- Top Nav bar -->
     <nav id="top-nav">
@@ -43,7 +30,11 @@
         alt="Extensions Logo"
       />
       <button type="button" id="theme-btn">
-        <img src="./assets/images/icon-sun.svg" alt="Light mode icon" />
+        <img
+          src="./assets/images/icon-sun.svg"
+          alt="Light mode icon"
+          aria-label="Switch to light mode"
+        />
       </button>
     </nav>
     <main>
@@ -53,9 +44,11 @@
         </header>
         <!-- Filter Area -->
         <section id="filter">
-          <button class="filter-btn-active filter-btn">All</button>
-          <button class="filter-btn">Active</button>
-          <button class="filter-btn">Inactive</button>
+          <button type="button" class="filter-btn-active filter-btn">
+            All
+          </button>
+          <button type="button" class="filter-btn">Active</button>
+          <button type="button" class="filter-btn">Inactive</button>
         </section>
       </div>
       <!-- Cards Section -->
@@ -63,11 +56,12 @@
         <ul class="card-list"></ul>
       </section>
     </main>
-
-    <footer class="attribution">
-      Challenge by
-      <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-       Coded by <a href="#">Rida</a>.
+    <!-- Footer -->
+    <footer>
+      Challenge by&nbsp
+      <a href="https://www.frontendmentor.io?ref=challenge"
+        >Frontend Mentor&nbsp</a
+      >. Coded by &nbsp <a href="#">Rida</a>.
     </footer>
   </body>
 </html>
