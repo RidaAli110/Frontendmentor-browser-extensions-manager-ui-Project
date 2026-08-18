@@ -3,7 +3,7 @@ I started by reading the README and making a plan on how to approach this projec
 As I went along I used Notion to keep track of what i needed to do and what features I had already completed.
 This project took me 6 days to do approximately 3/4 hours a day.
 
-### Built with
+## Built with
 * Semantic HTML
 * Flexbox
 * Grid
