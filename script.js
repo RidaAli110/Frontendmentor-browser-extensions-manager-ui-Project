@@ -105,7 +105,7 @@ function filterExtensions(e) {
   if (e.target.classList.contains('filter-btn')) {
     clearCard();
     // Switch Statement to check which button was clicked
-    switch (e.target.textContent) {
+    switch (e.target.textContent.trim()) {
       case 'All':
         createCard(extensions);
         break;
